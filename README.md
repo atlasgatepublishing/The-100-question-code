@@ -8,6 +8,10 @@ This repository holds all of the code printed in the three code appendices of th
 * `tests/` is Appendix F: every test script that produced a number in the book, organised by phase and family, in the same folders the project archive uses. Where the archive held identical copies of one script in several folders, this repository holds the script once, at the first of those paths. `tests/FILE-INDEX.csv` records the hash of every distinct script and every folder that held a copy.
 * `borrowed-libraries/` is Appendix G: the published library code that one test, the meta-labeling test in Version 6, ran on. It is other people's code, it stays under its own licences, and those licence texts are included in `borrowed-libraries/licenses/` and in the library folders themselves. `borrowed-libraries/FILE-INDEX.csv` lists every borrowed file with its package and hash. One package, chardet, was removed from this folder before posting, at the publisher's direction; the manifest explains why, and the licence audit kept in this folder records its place in the original test environment.
 
+## Champion App
+
+The runnable companion app to the book, the champion strategy only, also lives in this repository, as source code in the `champion-app/` folder. It is paper trading only in this release, with live trading locked in the code. There is no installer and no executable: you download the source and run it yourself, with your own Python and your own free Alpaca paper account. Start with [the Champion App README](champion-app/README.md), which states plainly what the app does, what it has been tested against, and what has not been verified yet.
+
 ## Running the application
 
 The program runs entirely on your own machine, with your own keys. Nothing is sent back to the publisher. See `app/README.md` for setup instructions and `app/config.example.json` for the shape of the configuration file. Your keys are stored on your own machine only, in the local key store the code describes.
