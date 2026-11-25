@@ -1,6 +1,6 @@
 # Package manifest: what is in here, where it came from, and what was left out
 
-This package reproduces, file for file, the code printed in the three code appendices of *The $100 Question* (Atlas Gate Publishing, 2026), with one removal made at the publisher's direction before posting, described in the exclusions below: the chardet library is not in this repository, and one small joblib test file could not be posted byte for byte and is not in this repository either. Every other file was copied, never modified, and every copied file was checked against the hash recorded when the book was built. All checks passed.
+This package reproduces, file for file, the code printed in the three code appendices of *The $100 Question* (Atlas Gate Publishing, 2026), with one removal made at the publisher's direction before posting, described in the exclusions below: the chardet library is not in this repository, and one small joblib test file could not be posted byte for byte and is not in this repository either. One file was added after the first posting, at the publisher's direction, to complete the record: the champion source script, described in its own section below. Every other file was copied, never modified, and every copied file was checked against the hash recorded when the book was built. All checks passed.
 
 ## Contents and counts
 
@@ -41,6 +41,10 @@ No real API key, token, password, or other credential value was found anywhere i
 * Non-script files in the backtests archive: results documents, scoreboards, and data files in Markdown, JSON, and CSV form. Appendix F printed the scripts only, and so does this package.
 * The rest of the library environment: package metadata folders, package data files, compiled Python files, and binary library files inside the venv. Appendix G printed the 1,411 Python source files, and so does this package. The borrowed packages can be installed from their publishers in the normal way; this folder is the printed record of the exact code the test ran on.
 * Build and junk files throughout: `__pycache__` folders, `.pyc` files, version control folders, book documents, page renders, and build scripts from the book's own production. None of that is program code.
+
+## Added after first posting
+
+* The champion source script (added 25 November 2026): `tests/v4/value-momentum-plainfloor.py`, 22,239 bytes, SHA-256 921dee828c4304de9f6ffc35301865f60da8215f14ffa4f733ccaed6b5152160. This is the promoted champion run itself: book to market plus 12 minus 1 momentum, percentile average rank, quarterly top five equal weight, the program's costs, and the plain 15 percent floor. The application printed in Appendix E loads this module and calls it verbatim, and its engine file says so in its own header, but the module itself sat in the project archive's backtests folder and was not among the scripts Appendix F printed, so the first posting of this repository could not run the champion from the repository alone. The publisher directed that it be added, and it is posted unchanged, copied from the archive and checked against the hash above. This repository therefore holds this one script in addition to the 1,422 distinct test files the book printed. The data caches the script reads when it runs in the archive (the EDGAR company facts and cached prices in its data folders, about 181 MB) are not posted, for the same reason this package has never posted data: they are inputs, not code, and they can be fetched again from the public sources the book names.
 
 ## One limit, stated plainly
 
