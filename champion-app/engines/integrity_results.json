@@ -1,0 +1,58 @@
+{
+ "basis": "replay, $100 start; the vendored champion original on the plain -15% floor basis (halt ends run); original backtest caches read-only",
+ "all_pass": true,
+ "checks": [
+  {
+   "check": "V+M champion continuous",
+   "window": "continuous",
+   "expected": 544.47,
+   "actual": 544.47,
+   "pass": true,
+   "halted": null,
+   "orders": 202,
+   "costs": 5.49,
+   "expected_orders": 202,
+   "expected_costs": 5.49,
+   "expected_halted": null
+  },
+  {
+   "check": "V+M champion validation",
+   "window": "validation",
+   "expected": 288.05,
+   "actual": 288.05,
+   "pass": true,
+   "halted": null,
+   "orders": 100,
+   "costs": 2.19,
+   "expected_orders": 100,
+   "expected_costs": 2.19,
+   "expected_halted": null
+  },
+  {
+   "check": "SPY shadow continuous",
+   "window": "continuous",
+   "expected": 313.62,
+   "actual": 313.62,
+   "pass": true,
+   "halted": null,
+   "orders": 2,
+   "costs": 0.42,
+   "expected_orders": 2,
+   "expected_costs": 0.42,
+   "expected_halted": null
+  },
+  {
+   "check": "SPY shadow validation",
+   "window": "validation",
+   "expected": 187.77,
+   "actual": 187.77,
+   "pass": true,
+   "halted": null,
+   "orders": 2,
+   "costs": 0.3,
+   "expected_orders": 2,
+   "expected_costs": 0.3,
+   "expected_halted": null
+  }
+ ]
+}

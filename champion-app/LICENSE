@@ -1,0 +1,22 @@
+The $100 Question companion code: non-commercial licence
+
+Copyright 2026 Atlas Gate Publishing. All rights reserved, subject to the terms below.
+
+This licence covers the program's own code in this repository: the companion application in the app folder and the test scripts in the tests folder. It does not cover the borrowed library code in the borrowed-libraries folder. That code belongs to its own authors and stays under the licences printed with it, which this licence does not change, narrow, or add conditions to.
+
+What you may do, free of charge:
+
+1. Download this code and keep a copy.
+2. Run the program for your own personal use.
+3. Study the code, and modify it for your own personal use.
+4. Share the program with others free of charge, provided this licence travels with it and the copyright notice above stays attached.
+
+What nobody may do:
+
+1. Sell this code or this application.
+2. Sell a modified version of it, a repackaged version of it, or a version with a new name and the same machinery inside.
+3. Bundle it into a paid product, charge for access to it as part of a paid service, or use it as the engine of anything sold to anyone.
+
+Those prohibitions are the whole point of this licence: the program is given away so that the people who run it never have to buy it back from somebody else.
+
+The program is provided as is, for education, with no warranty of any kind and no promise that it works, that it is free of bugs, or that it will make money. Its strategies are proven only in historical replay, not proven live; its floor has the limits stated in the book; and anyone who uses it, in any mode, trades their own account at their own risk and can lose money. This code and the book are not investment advice, and the publisher is not your financial adviser.

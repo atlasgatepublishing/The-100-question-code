@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview — Atlas Gate Champion App</title>
+<style>{{CSS}}</style>
+{{THEME_JS}}
+</head>
+<body>
+{{HEADER}}
+<main class="wrap">
+  <section class="card" aria-label="Verdict">
+    <div class="verdict">
+      <div>
+        <div class="label">Total balance — all pots</div>
+        <div class="big">{{VERDICT_BALANCE}}</div>
+        <div class="small muted" style="margin-top:4px">{{VERDICT_MODE}}</div>
+      </div>
+      <div class="stat">
+        <div class="v {{VERDICT_DAY_CLS}}">{{VERDICT_DAY}}</div>
+        <div class="l">Day change</div>
+      </div>
+      <div class="stat">
+        <div class="v {{STAT_TOTAL_RETURN_CLS}}">{{STAT_TOTAL_RETURN}}</div>
+        <div class="l">Total return</div>
+      </div>
+      <div class="stat">
+        <div class="v {{STAT_VS_SPY_CLS}}">{{STAT_VS_SPY}}</div>
+        <div class="l">vs SPY buy-and-hold</div>
+      </div>
+      <div class="stat">
+        <div class="v">{{STAT_POTS}}</div>
+        <div class="l">Pots</div>
+      </div>
+      <div class="stat">
+        <div class="v">{{STAT_DIST}}</div>
+        <div class="l">Distance to $1M goal (all pots)</div>
+      </div>
+    </div>
+  </section>
+
+  {{ALERTS}}
+
+  <div class="grid-main">
+    <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+      <section class="card" aria-label="Performance versus SPY">
+        <div class="card-h"><h2>Performance — every pot vs SPY</h2><span class="small muted">Growth of $100, monthly</span></div>
+        <div class="card-b">
+          {{CHART}}
+          <div style="margin-top:10px">{{LEGEND}}</div>
+        </div>
+      </section>
+
+      <section class="card" aria-label="Pots">
+        <div class="card-h"><h2>Pots</h2><span class="small muted">Separate pots, never blended — Claude's rules (v9)</span></div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr>
+              <th>Pot</th><th>Status</th><th class="num">Balance</th><th class="num">Total return</th>
+              <th class="num">Day change</th><th class="num">Distance to $1M</th><th class="num">vs SPY</th>
+            </tr></thead>
+            <tbody>{{POT_ROWS}}</tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <aside class="card" aria-label="Holdings watchlist">
+      <div class="card-h"><h2>Holdings</h2><span class="small muted">Across all pots</span></div>
+      <div class="card-b">{{WATCH_ROWS}}</div>
+    </aside>
+  </div>
+</main>
+{{FOOTER}}
+</body>
+</html>

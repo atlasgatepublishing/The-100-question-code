@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pot Detail — Atlas Gate Champion App</title>
+<style>{{CSS}}</style>
+{{THEME_JS}}
+</head>
+<body>
+{{HEADER}}
+<main class="wrap">
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">{{POT_TABS}}</div>
+
+  <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+    <h1 style="font-size:24px;letter-spacing:-.01em">{{POT_NAME}}</h1>
+    {{POT_STATUS}}
+    <span class="muted">{{POT_STRATEGY}}</span>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="l">Balance</div><div class="v num" style="text-align:left">{{KPI_BALANCE}}</div></div>
+    <div class="kpi"><div class="l">Total return</div><div class="v {{KPI_RETURN_CLS}}">{{KPI_RETURN}}</div></div>
+    <div class="kpi"><div class="l">vs SPY</div><div class="v {{KPI_VS_SPY_CLS}}">{{KPI_VS_SPY}}</div></div>
+    <div class="kpi"><div class="l">Protection floor</div><div class="v num" style="text-align:left">{{KPI_FLOOR}}</div></div>
+    <div class="kpi"><div class="l">Run state</div><div class="v" style="font-size:17px;padding-top:4px">{{KPI_EPISODE}}</div></div>
+  </div>
+
+  <div class="alert info" style="margin-bottom:18px"><span class="tag">FLOOR</span>{{FLOOR_NOTE}}</div>
+
+  <section class="card" style="margin-bottom:18px" aria-label="Equity curve versus SPY">
+    <div class="card-h"><h2>Equity curve vs SPY</h2><span class="small muted">Growth of $100, monthly</span></div>
+    <div class="card-b">{{CHART}}<div style="margin-top:10px">{{LEGEND}}</div></div>
+  </section>
+
+  {{BENCHMARK_SECTION}}
+
+  <div class="grid-main">
+    <section class="card" aria-label="Positions">
+      <div class="card-h"><h2>Positions</h2></div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr><th>Ticker</th><th class="num">Shares</th><th class="num">Price</th><th class="num">Value</th><th class="num">Day</th></tr></thead>
+          <tbody>{{POS_ROWS}}</tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card" aria-label="Trade log">
+      <div class="card-h"><h2>Trade log</h2><span class="small muted">Most recent first</span></div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr><th>Date</th><th>Ticker</th><th>Side</th><th class="num">Shares</th><th class="num">Price</th><th class="num">Realized P&amp;L</th></tr></thead>
+          <tbody>{{TRADE_ROWS}}</tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</main>
+{{FOOTER}}
+</body>
+</html>

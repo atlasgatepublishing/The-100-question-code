@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log in — Atlas Gate Champion App</title>
+<style>{{CSS}}</style>
+{{THEME_JS}}
+</head>
+<body>
+{{HEADER}}
+<main class="wrap">
+  <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+    <h1 style="font-size:24px;letter-spacing:-.01em">Log in</h1>
+    <span class="muted">{{OWNER_GREETING}} This dashboard is protected by a password set by its owner.</span>
+  </div>
+  {{LOGIN_ERROR}}
+  <section class="card" style="margin-bottom:18px" aria-label="Log in">
+    <div class="card-h"><h2>Dashboard password</h2></div>
+    <div class="card-b" style="max-width:78ch">
+      <form method="post" action="/login">{{CSRF_FIELD}}
+        <label class="small muted" for="password">Password</label>
+        <input class="confirm-input" id="password" type="password" name="password"
+               autocomplete="current-password" spellcheck="false" placeholder="Password">
+        <div class="btn-row"><button class="btn" type="submit">Log in</button></div>
+      </form>
+      <p class="small muted" style="margin-top:10px">There are no default credentials. If you did
+      not set a dashboard password, leave it unset on a loopback-only install — authentication is
+      only required when a password is configured (and always when the dashboard is bound beyond
+      this machine).</p>
+    </div>
+  </section>
+</main>
+{{FOOTER}}
+</body>
+</html>

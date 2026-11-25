@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trading Mode — Atlas Gate Champion App</title>
+<style>{{CSS}}</style>
+{{THEME_JS}}
+</head>
+<body>
+{{HEADER}}
+<main class="wrap">
+  <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+    <h1 style="font-size:24px;letter-spacing:-.01em">Trading mode</h1>
+    <span class="muted">Paper is the default. Live is your own deliberate act, with your own keys, on your own machine.</span>
+  </div>
+
+  {{MSG_BLOCK}}
+  {{ALERTS}}
+
+  <section class="card" style="margin-bottom:18px" aria-label="Current mode">
+    <div class="card-h"><h2>Current mode</h2></div>
+    <div class="card-b">
+      <div class="mode-big {{MODE_BIG_CLS}}">{{MODE_BIG}}</div>
+      <table style="max-width:640px">
+        <tbody>{{STATUS_ROWS}}</tbody>
+      </table>
+      <p class="small muted" style="margin-top:10px">Mode and keys live in <span class="mono">config.local.json</span>
+      on this machine only. Keys are never shown here, never logged, and never sent anywhere except
+      to Alpaca when an order is placed. If live mode is set but no live keys are found, the app
+      runs in PAPER — it fails safe, never live.</p>
+    </div>
+  </section>
+
+  <section class="card" style="margin-bottom:18px" aria-label="Paper first">
+    <div class="card-h"><h2>Read this before you switch — paper first</h2></div>
+    <div class="card-b" style="max-width:78ch">
+      <p>The champion is proven <strong>only in replay</strong> — historical data run through
+      the same code. It has never traded a live account. The paper trial is not just the
+      designed path, it is enforced: <strong>live mode cannot be enabled until the app's audit
+      log shows a completed paper trial of 90 days, including at least one completed quarterly
+      selection cycle, with no unresolved reconciliation mismatch</strong>. Run the app in
+      PAPER mode against your free Alpaca paper account, read the daily reports, and only
+      then decide about real money.</p>
+      <p style="margin-top:8px">Live results are expected to be <strong>lower</strong> than the replay
+      record. The program's own planning haircut is roughly 18–23% a year if the edge holds at all,
+      against 24–31% in replay — and the edge may not hold. In LIVE mode the app places real orders
+      in <strong>your own</strong> Alpaca account, with your money, at your own risk. You can switch
+      back to paper at any time, and STOP ALL halts order placement immediately — but stopping does
+      not sell anything you already hold.</p>
+    </div>
+  </section>
+
+  <section class="card" style="margin-bottom:18px" aria-label="Switch mode">
+    <div class="card-h"><h2>Switch</h2></div>
+    <div class="card-b">{{ACTION_BLOCK}}</div>
+  </section>
+
+  <section class="card" style="margin-bottom:18px" aria-label="Stop all">
+    <div class="card-h"><h2>Stop all</h2></div>
+    <div class="card-b" style="max-width:78ch">
+      <p>STOP ALL halts the engine immediately: it will place <strong>no further orders</strong>
+      in any mode until you resume it here, and it <strong>cancels every resting order</strong> at
+      the broker, showing the result order by order. It does <strong>not</strong> sell or liquidate
+      anything — positions you already hold stay in your Alpaca account, untouched, for you to
+      manage at the broker. Use it whenever anything looks wrong.</p>
+      <div style="margin-top:12px">{{STOP_BLOCK}}</div>
+    </div>
+  </section>
+
+  <section class="card" aria-label="Protections in live mode">
+    <div class="card-h"><h2>Protections — identical in live mode</h2></div>
+    <div class="card-b" style="max-width:78ch">
+      <p>The adopted v9 protections apply unchanged with real money: a plain −15% floor from each
+      episode's starting balance, no profit ladder; a first halt liquidates the pot, sits out 90 days,
+      and restarts once under a fresh −15% floor; a second halt ends the run. There is no Pot 2 in
+      any mode. Hard caps apply in both modes too: five positions at most, 20 percent of the pot in
+      any one name, and the pot size you set under this app's shipped $10,000 ceiling.</p>
+      <p style="margin-top:8px">One limit matters more with real money: the app can only act while it
+      is running. If a floor is breached while the machine is off, the sale happens at the next
+      startup, at whatever price is then available. The floor is enforced when the app is awake;
+      it is not a resting broker order.</p>
+    </div>
+  </section>
+</main>
+{{FOOTER}}
+</body>
+</html>
