@@ -4,7 +4,7 @@ Published by Atlas Gate Publishing, Springfield, Illinois.
 
 ## Free means free
 
-The book is in this folder, complete, at no charge: [`The_100_Question.pdf`](The_100_Question.pdf), 417 pages. No charge, no catch, no cut down sample, no email address required, nothing held back for a paid version. Atlas Gate Publishing decided to give it away, so here it is. Download it, read it, share it, keep it.
+The book is in this folder, complete, at no charge: [`The_100_Question_public_edition.pdf`](The_100_Question_public_edition.pdf), 417 pages. No charge, no catch, no cut down sample, no email address required, nothing held back for a paid version. Atlas Gate Publishing decided to give it away, so here it is. Download it, read it, share it, keep it.
 
 ## What it is
 
