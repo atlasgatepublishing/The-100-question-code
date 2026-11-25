@@ -8,9 +8,13 @@ This repository holds all of the code printed in the three code appendices of th
 * `tests/` is Appendix F: every test script that produced a number in the book, organised by phase and family, in the same folders the project archive uses. Where the archive held identical copies of one script in several folders, this repository holds the script once, at the first of those paths. `tests/FILE-INDEX.csv` records the hash of every distinct script and every folder that held a copy.
 * `borrowed-libraries/` is Appendix G: the published library code that one test, the meta-labeling test in Version 6, ran on. It is other people's code, it stays under its own licences, and those licence texts are included in `borrowed-libraries/licenses/` and in the library folders themselves. `borrowed-libraries/FILE-INDEX.csv` lists every borrowed file with its package and hash. One package, chardet, was removed from this folder before posting, at the publisher's direction; the manifest explains why, and the licence audit kept in this folder records its place in the original test environment.
 
-## Champion App
+## One free release: the book, the code, and the app
 
-The runnable companion app to the book, the champion strategy only, also lives in this repository, as source code in the `champion-app/` folder. It is paper trading only in this release, with live trading locked in the code. There is no installer and no executable: you download the source and run it yourself, with your own Python and your own free Alpaca paper account. Start with [the Champion App README](champion-app/README.md), which states plainly what the app does, what it has been tested against, and what has not been verified yet.
+Everything in this repository is free, from Atlas Gate Publishing. The book itself is here in full, beside the code that produced its numbers and the app that runs its champion:
+
+* **The book:** *The $100 Question*, complete and free, in the [`book/`](book/README.md) folder. No charge and no catch.
+* **The book's code:** the complete code from the book's appendices, in the `app/`, `tests/`, and `borrowed-libraries/` folders described above, so every number in the book can be checked and re-run.
+* **The Champion App:** the runnable companion app, the champion strategy only, as source code in the [`champion-app/`](champion-app/README.md) folder. Paper trading only in this release, with live trading locked in the code. There is no installer and no executable: you download the source and run it yourself, with your own Python and your own free Alpaca paper account. Its README states plainly what the app does, what it has been tested against, and what has not been verified yet.
 
 ## Running the application
 
