@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reports — Atlas Gate AI Stock App</title>
+<style>{{CSS}}</style>
+{{THEME_JS}}
+</head>
+<body>
+{{HEADER}}
+<main class="wrap">
+  <h1 style="font-size:24px;letter-spacing:-.01em;margin-bottom:6px">Daily Reports</h1>
+  <p class="muted" style="margin-bottom:18px;max-width:820px">
+    One report per trading day: balances, day and total gain/loss, trades, win rate, positions,
+    worst drawdown, costs, estimated taxes, watcher actions, and distance to the $1M finish line.
+    Reports are read from <span class="mono">../reports/output/</span> when the engine writes them.
+  </p>
+  <section class="card" aria-label="Report list">
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr><th>Date</th><th>Report</th><th></th><th class="num"></th></tr></thead>
+        <tbody>{{REPORT_ROWS}}</tbody>
+      </table>
+    </div>
+  </section>
+</main>
+{{FOOTER}}
+</body>
+</html>

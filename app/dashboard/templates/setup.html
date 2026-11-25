@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set up your dashboard — Atlas Gate AI Stock App</title>
+<style>{{CSS}}</style>
+{{THEME_JS}}
+</head>
+<body>
+{{HEADER}}
+<main class="wrap">
+  <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+    <h1 style="font-size:24px;letter-spacing:-.01em">Welcome — set up your dashboard</h1>
+    <span class="muted">This is a first run: no dashboard login exists yet.</span>
+  </div>
+  {{SETUP_ERROR}}
+  <section class="card" style="margin-bottom:18px" aria-label="Create your dashboard login">
+    <div class="card-h"><h2>Create your name and password</h2></div>
+    <div class="card-b" style="max-width:78ch">
+      <p style="margin-bottom:12px">Choose the name this dashboard should greet you by, and a
+      password for signing in. From now on, signing in asks for the password only — your name is
+      stored and shown, never asked for again. This setup page closes permanently once your
+      login is created.</p>
+      <form method="post" action="/setup">{{CSRF_FIELD}}
+        <label class="small muted" for="owner_name">Your name</label>
+        <input class="confirm-input" id="owner_name" type="text" name="owner_name"
+               autocomplete="name" spellcheck="false" placeholder="Your name">
+        <label class="small muted" for="password">Password (at least 8 characters)</label>
+        <input class="confirm-input" id="password" type="password" name="password"
+               autocomplete="new-password" spellcheck="false" placeholder="Password">
+        <label class="small muted" for="password_confirm">Type the password again</label>
+        <input class="confirm-input" id="password_confirm" type="password" name="password_confirm"
+               autocomplete="new-password" spellcheck="false" placeholder="Password again">
+        <div class="btn-row"><button class="btn" type="submit">Create my login</button></div>
+      </form>
+      <p class="small muted" style="margin-top:10px">Your password is stored only as a salted
+      PBKDF2 hash — the password itself is never written to disk anywhere in this app.</p>
+    </div>
+  </section>
+</main>
+{{FOOTER}}
+</body>
+</html>

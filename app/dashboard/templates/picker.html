@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Horizon Picker — Atlas Gate AI Stock App</title>
+<style>{{CSS}}</style>
+{{THEME_JS}}
+</head>
+<body>
+{{HEADER}}
+<main class="wrap">
+  <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+    <h1 style="font-size:24px;letter-spacing:-.01em">Horizon Picker</h1>
+    <span class="muted">Pick a time horizon, then a strategy. Every fact about an offering —
+      its tier, its published finals, its worst fall, and any warning — is shown on its card
+      before you select it. Each selection starts its own separate $100 pot; pots are never blended.</span>
+  </div>
+  {{ALERTS}}
+  {{PICKER_SECTIONS}}
+</main>
+{{FOOTER}}
+</body>
+</html>

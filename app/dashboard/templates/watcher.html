@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watcher — Atlas Gate AI Stock App</title>
+<style>{{CSS}}</style>
+{{THEME_JS}}
+</head>
+<body>
+{{HEADER}}
+<main class="wrap">
+  <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px">
+    <h1 style="font-size:24px;letter-spacing:-.01em">Watcher</h1>
+    {{SAMPLE_TAG}}
+  </div>
+  <p class="muted" style="max-width:820px;margin-bottom:18px">
+    Radar only. The watcher surfaces public filings — insider Form 4 trades, 13D activist stakes,
+    13F fund holdings, and congressional STOCK Act disclosures — so signals can confirm, veto, or
+    size a decision the strategies already made. It never originates a trade on its own. Disclosure
+    delays are real: Form 4 arrives within 2 business days; 13F is 45–135 days stale; congressional
+    reports lag 30–45 days and give amount ranges only.
+  </p>
+  <section class="card" aria-label="Watcher radar feed">
+    <div class="card-h"><h2>Radar feed</h2><span class="small muted">Newest first</span></div>
+    <div>{{FEED_ROWS}}</div>
+  </section>
+</main>
+{{FOOTER}}
+</body>
+</html>

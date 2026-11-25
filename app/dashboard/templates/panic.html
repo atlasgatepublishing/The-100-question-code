@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Key Leak Help — Atlas Gate AI Stock App</title>
+<style>{{CSS}}</style>
+{{THEME_JS}}
+</head>
+<body>
+{{HEADER}}
+<main class="wrap">
+  <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+    <h1 style="font-size:24px;letter-spacing:-.01em">Key Leak Help</h1>
+    <span class="muted">If an Alpaca key may have leaked, work through these steps in order.</span>
+  </div>
+  {{ALERTS}}
+  <section class="card" style="margin-bottom:18px" aria-label="Step 1 stop all">
+    <div class="card-h"><h2>Step 1 — STOP ALL</h2></div>
+    <div class="card-b" style="max-width:78ch">
+      <p>Stop the engine first, before anything else. STOP ALL halts every order; it does not
+      sell anything you already hold.</p>
+      <div style="margin-top:12px">{{STOP_BLOCK}}</div>
+    </div>
+  </section>
+  <section class="card" style="margin-bottom:18px" aria-label="Step 2 regenerate">
+    <div class="card-h"><h2>Step 2 — Regenerate at Alpaca</h2></div>
+    <div class="card-b" style="max-width:78ch">
+      <p>Go to <a href="https://app.alpaca.markets">https://app.alpaca.markets</a>, sign in, and
+      regenerate the API key pair for each affected account (paper and live are separate pairs).
+      Regenerating invalidates the old pair immediately — any script still using the old secret
+      will receive HTTP 401. Then audit your orders and positions at Alpaca and cancel anything
+      you do not recognise.</p>
+    </div>
+  </section>
+  <section class="card" style="margin-bottom:18px" aria-label="Step 3 replace keys">
+    <div class="card-h"><h2>Step 3 — Replace the keys in config.local.json</h2></div>
+    <div class="card-b" style="max-width:78ch">
+      <p>On this machine, open <span class="mono">config.local.json</span> and replace the old key
+      id and secret key with the new pair, for each account you regenerated. Save the file. Never
+      paste keys into a website, chat, or email — they only ever go into this local file, by your
+      own hand.</p>
+      <p style="margin-top:8px">Note: after replacing keys, live mode must be re-enabled
+      deliberately from the Trading Mode page. Existing broker clients are revoked by design when
+      the keys change, so nothing trades on the new pair until you re-enable it yourself.</p>
+    </div>
+  </section>
+  <section class="card" style="margin-bottom:18px" aria-label="Step 4 verify">
+    <div class="card-h"><h2>Step 4 — Verify the new keys</h2></div>
+    <div class="card-b" style="max-width:78ch">
+      <p>Check that each account with keys in the config can be reached with those keys. This
+      places no orders — it only reads the account.</p>
+      <form method="post" action="/panic/verify" style="margin-top:12px">{{CSRF_FIELD}}
+        <button class="btn" type="submit">Verify keys now</button>
+      </form>
+      <div style="margin-top:12px">{{VERIFY_RESULTS}}</div>
+    </div>
+  </section>
+</main>
+{{FOOTER}}
+</body>
+</html>
